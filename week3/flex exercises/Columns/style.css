@@ -1,0 +1,39 @@
+.container {
+  border: 5px solid #56626e;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  color: white;
+  background-color: #59a1af;
+  flex: 1;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 5px 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .box:last-child {
+    flex: 100%;
+  }
+}
+
+@media only screen and (min-width: 573px) and (max-width: 768px) {
+  .box {
+    flex: 45%;
+  }
+}
+
+@media (max-width: 572px) {
+  .box {
+    flex: 100%;
+  }
+}
