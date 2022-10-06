@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Profil</h1>
+      <h2>Hier können Sie Ihre Adress-Angaben einsehen und anpassen.</h2>
+      <form action="#">
+        <!-- persönliche daten -->
+        <fieldset>
+          <legend>Persönliche Daten</legend>
+          <div class="input-container">
+            <label for="titel">Titel</label>
+            <input type="text" id="titel" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" required />
+          </div>
+          <div class="input-container">
+            <label for="nachname">Nachname</label>
+            <input type="text" id="nachname" required value="Muster" />
+          </div>
+          <div class="input-container" id="geschlecht-container">
+            <label for="Geschlecht">Geschlecht</label>
+            <ul role="group" aria-labelledby="Geschlecht" class="switch">
+              <li>
+                <input
+                  type="radio"
+                  name="Geschlecht"
+                  value="w"
+                  id="GeschlechtW"
+                  required
+                />
+                <label for="GeschlechtW">w</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="Geschlecht"
+                  value="m"
+                  id="GeschlechtM"
+                  checked=""
+                />
+                <label for="GeschlechtM">m</label>
+              </li>
+            </ul>
+          </div>
+          <div class="input-container" id="sprache-container">
+            <label for="Sprache">Sprache</label>
+            <ul role="group" aria-labelledby="Sprache" class="switch">
+              <li>
+                <input
+                  type="radio"
+                  name="Sprache"
+                  value="English"
+                  id="SpracheE"
+                  required
+                />
+                <label for="SpracheE">En</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="Sprache"
+                  value="French"
+                  id="SpracheF"
+                  checked=""
+                />
+                <label for="SpracheF">Fr</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  name="Sprache"
+                  value="German"
+                  id="SpracheG"
+                  checked=""
+                />
+                <label for="SpracheG">De</label>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+        <!-- kontaktdaten -->
+        <fieldset>
+          <legend>Kontaktdaten</legend>
+          <div class="input-container">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" />
+          </div>
+          <div class="input-container">
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="hauptnummer">Hauptnummer</label>
+            <input type="tel" id="hauptnummer" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="fax">Fax</label>
+            <input type="tel" id="fax" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="titel">Mail 1</label>
+            <input type="email" id="mail-1" />
+          </div>
+          <div class="input-container">
+            <label for="titel">Mail 2</label>
+            <input type="email" id="mail-2" placeholder="optional" />
+          </div>
+        </fieldset>
+        <!-- adressdaten -->
+        <fieldset>
+          <legend>Adressdaten</legend>
+          <div class="input-container">
+            <label for="firma">Firma</label>
+            <input type="text" id="firma" />
+          </div>
+          <div class="input-container">
+            <label for="zusatz-firma">Zusatz Firma</label>
+            <input type="text" id="zusatz-firma" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="homepage">Homepage</label>
+            <input type="email" id="homepage" placeholder="optional" />
+          </div>
+
+          <div class="input-container">
+            <label>Adresse / Hausnummer</label>
+            <div id="adresse-hausnummer-container">
+              <input type="text" id="adresse" />
+              <input type="number" id="hausnummer" />
+            </div>
+          </div>
+          <div class="input-container">
+            <label for="zusatz-adresse">Zusatz Adresse</label>
+            <input type="text" id="zusatz-adresse" placeholder="optional" />
+          </div>
+          <div class="input-container">
+            <label for="postfach">Postfach</label>
+            <input type="number" id="postfach" placeholder="optional" />
+          </div>
+          <button>Speichern</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

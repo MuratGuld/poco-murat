@@ -1,7 +1,7 @@
 body {
-  overflow: hidden;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .block {
@@ -9,27 +9,30 @@ body {
   height: 80vh;
 }
 
-.bg-red {
-  background-color: red;
+p {
+  text-align: center;
+  margin-top: 30vh;
+  font-size: 100px;
 }
 
-.bg-blue {
-  background-color: blue;
+.bg-purple {
+  background-color: #444772;
 }
 
 .bg-green {
-  background-color: green;
+  background-color: #1a7517;
 }
 
 .container {
   display: flex;
   flex-wrap: nowrap;
-  width: 300%;
+  width: 500%;
 }
 
 ul {
   list-style-type: none;
   display: flex;
+  margin: 30px 40vw;
 }
 
 ul > li > a {
