@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  height: 20vh;
+  text-align: center;
+  background-color: #ededed;
+  color: #333333;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+header > p {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  padding: 10px;
+}
+
+/* Aside */
+aside {
+  background-color: #f17b2d;
+  color: white;
+  height: 80vh;
+  position: fixed;
+  width: 20vw;
+  font-size: 20px;
+}
+
+/* Main */
+main {
+  margin-left: 20vw;
+  min-height: 80vh;
+  position: relative;
+}
+
+main img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+}
+
+/* Card */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 280px;
+  height: 420px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 10px 8px 16px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-text {
+  padding: 2px 16px;
+}
+
+/* Footer */
+.footer {
+  height: 50px;
+  width: 100%;
+  padding-top: 25px;
+  background-color: #333333;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
