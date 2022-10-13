@@ -45,6 +45,7 @@ while (5 > a) {
 }
 
 for (let i = 0; i < 5; i++) {
+  debugger;
   console.log(i);
 }
 
