@@ -11,10 +11,19 @@
     <!-- Header -->
     <header>
       <h1>POWERCODES</h1>
-      <p>Meet Participants</p>
     </header>
     <!-- Aside -->
-    <aside>Categories</aside>
+    <aside>
+      <h2>Title</h2>
+      <select onchange="filterByTitle(this.value);">
+        <option value="Software Developer">Software Developer</option>
+        <option value="Web Developer">Web Developer</option>
+        <option value="Data Scientist">Data Scientist</option>
+        <option value="Cloud Engineer">Cloud Engineer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+        <option value="Software Tester">Software Tester</option>
+      </select>
+    </aside>
     <!-- Main -->
     <main>
       <section class="card-container">
