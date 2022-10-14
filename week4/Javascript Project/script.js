@@ -209,14 +209,23 @@ participantList = [
 
 let cardContainer = document.querySelector(".card-container");
 
+let renderText = (e) => {
+  console.log(e.target.value);
+};
+
 let renderParticipantList = () => {
   cardContainer.innerHTML = participantList
     .map((participant) => {
-      return `<div class="card">
+      return `<div class="card"  onmouseover="displayContext(this)" onmouseout="hideContext(this)">
                 <img src="${participant.imageUrl}" alt="image" />
                 <div class="card-text">
                     <h4><b>${participant.name}</b></h4>
                     <p>${participant.title}</p>
+                </div>
+                <div class="info-text">                  
+                    <p> Country : ${participant.country} </p>
+                    <p> Age : ${participant.age} </p>
+                    <p> Hobby : ${participant.hobby} </p>
                 </div>
               </div>`;
     })
@@ -224,3 +233,33 @@ let renderParticipantList = () => {
 };
 
 document.addEventListener("DOMContentLoaded", renderParticipantList);
+
+function displayContext(e) {
+  let infoDiv = e?.firstElementChild?.nextElementSibling?.nextElementSibling;
+  infoDiv.style.visibility = "visible";
+}
+
+function hideContext(e) {
+  let infoDiv = e?.firstElementChild?.nextElementSibling?.nextElementSibling;
+  infoDiv.style.visibility = "hidden";
+}
+
+function filterByTitle(value) {
+  cardContainer.innerHTML = participantList
+    .filter((participant) => participant.title == value)
+    .map((participant) => {
+      return `<div class="card"  onmouseover="displayContext(this)" onmouseout="hideContext(this)">
+                <img src="${participant.imageUrl}" alt="image" />
+                <div class="card-text">
+                    <h4><b>${participant.name}</b></h4>
+                    <p>${participant.title}</p>
+                </div>
+                <div class="info-text">                  
+                    <p> Country : ${participant.country} </p>
+                    <p> Age : ${participant.age} </p>
+                    <p> Hobby : ${participant.hobby} </p>
+                </div>
+              </div>`;
+    })
+    .join("");
+}
