@@ -1,0 +1,36 @@
+START
+
+INITIALIZE currentAge as number
+INITIALIZE retirementAge as number
+INITIALIZE currentYear as number
+INITIALIZE remainingYear as number
+INITIALIZE retirementYear as number
+INITIALIZE upperRetirementLimit as number
+
+SET upperRetirementLimit BY system (an optimal value by admin)
+CALCULATE current year and SET as currentYear 
+
+PROMPT "What is your age?" as currentAge
+CHECK validit of input for currentAge => 
+CHECK IF value is a number
+CHECK IF value is a positive number
+IF the value does not meet the requirements, turn back to PROMPT step until getting valid value
+
+PROMPT "At what age would you like to retire?" as retirementAge 
+CHECK validit of input for retirementAge => 
+CHECK IF value is a number
+CHECK IF value is a positive number
+CHECK IF value is bigger than currentAge
+CHECK IF value is equal or smaller than upperRetirementLimit 
+IF the value does not meet the requirements, turn back to PROMPT step until getting valid value
+
+SUBTRACT currentAge from retirementAge and SET as remainingYear
+ADD remainingYear with currentYear and SET as retirementYear 
+
+DISPLAY `You have ${remainingYear} years left until you can retire.`
+DISPLAY `It's ${currentYear}, so you can retire in ${retirementYear}.`
+
+END
+
+
+

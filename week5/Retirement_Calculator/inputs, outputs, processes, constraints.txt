@@ -1,0 +1,33 @@
+INPUT
+=====
+currentAge 
+retirementAge 
+currentYear
+
+OUTPUT
+======
+remainingYear 
+retirementYear
+
+PROCESSES
+=========
+GET current age from user ans SET as currentAge 
+GET the age user wants to retire and SET as retirementAge 
+CALCULATE current year and SET as currentYear 
+SUBTRACT currentAge from retirementage and SET as remainingYear
+SUBTRACT currentAge from retirementage and SET as remainingYear
+ADD remainingYear with currentYear and SET as retirementYear 
+
+CONSTRAINTS
+===========
+currentAge should be a number 
+currentAge should be a positive number
+
+retirementAge should be a number 
+retirementAge should be a positive number
+retirementAge should be bigger than currentAge 
+retirementAge must have a real life upper limit
+
+
+
+
