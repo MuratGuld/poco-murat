@@ -5,6 +5,8 @@ const CHEAT_REVEAL_ALL = false;
 const ROWS_COUNT = 10;
 const COLS_COUNT = 10;
 let BOMBS_COUNT = 0;
+let FLAG_COUNT = 10;
+let CLEARED_CELL_COUNT = 0;
 
 let defeat = false;
 let victory = false;
@@ -65,9 +67,11 @@ function checkNeighbours(row, col) {
         ) {
           if (countAdjacentBombs(rowIndex, colIndex) != 0) {
             cells[rowIndex][colIndex].discovered = true;
+            CLEARED_CELL_COUNT++;
           } else {
             cells[rowIndex][colIndex].discovered = true;
             checkNeighbours(rowIndex, colIndex);
+            CLEARED_CELL_COUNT++;
           }
         }
       }
@@ -94,6 +98,7 @@ function discoverCell(row, col) {
     checkNeighbours(row, col);
   } else {
     cells[row][col].discovered = true;
+    CLEARED_CELL_COUNT++;
   }
 }
 
@@ -105,10 +110,14 @@ function flagCell(row, col) {
 
   let cell = cells[row][col];
 
-  if (!cell.hasBeenFlagged) {
+  if (!cell.hasBeenFlagged && FLAG_COUNT > 0) {
     cell.hasBeenFlagged = true;
-  } else {
+    FLAG_COUNT--;
+    CLEARED_CELL_COUNT++;
+  } else if (cell.hasBeenFlagged) {
     cell.hasBeenFlagged = false;
+    FLAG_COUNT++;
+    CLEARED_CELL_COUNT--;
   }
 }
 
@@ -138,21 +147,21 @@ function getBombsCount() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  return BOMBS_COUNT;
 }
 
 function getClearedCells() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  return CLEARED_CELL_COUNT;
 }
 
 function getTotalCellsToClear() {
   //
   // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
   //
-  return 0;
+  return ROWS_COUNT * COLS_COUNT;
 }
 
 function checkForVictory() {
@@ -160,7 +169,12 @@ function checkForVictory() {
   // TODO: Task 10 - Implement victory. If the player has revealed as many cells as they must (every cell that isn't a
   //                 bomb), set variable victory to true.
   //
-  return 0;
+  let TOTAL_CELL_COUNT = ROWS_COUNT * COLS_COUNT;
+  if (CLEARED_CELL_COUNT == TOTAL_CELL_COUNT) {
+    victory = true;
+  } else {
+    victory = false;
+  }
 }
 
 //
