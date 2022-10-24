@@ -16,6 +16,7 @@ function addToDoToList() {
   deleteButton.addEventListener("click", deleteTodo);
   deleteButton.appendChild(deleteButtonText);
 
+  // I append button to li 
   li.appendChild(liText);
   li.appendChild(deleteButton);
 
