@@ -29,6 +29,15 @@ let cityCoordinates = [
 let select = document.querySelector("select");
 let paragraph = document.querySelector("p");
 
+cityCoordinates.forEach((item) => {
+  let option = document.createElement("option");
+  let optionText = document.createTextNode(`${item.city}`);
+  option.appendChild(optionText);
+  option.setAttribute("value", `${item.city}`);
+
+  select.appendChild(option);
+});
+
 select.addEventListener("change", (e) => {
   let value = e.target.value;
   let selectedCity = cityCoordinates.find((item) => item.city == value);
